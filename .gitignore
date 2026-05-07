@@ -20,3 +20,7 @@ lib64
 /*.egg-info
 /build/
 __pycache__/
+
+
+chat_log/
+data/real_samples_500/
