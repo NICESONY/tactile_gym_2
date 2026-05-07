@@ -51,7 +51,7 @@ This repo refers to the paper "*Sim-to-real Deep Reinforcement Learning for Comp
 
 
 ### Installation ###
-This repo has been developed and tested with Ubuntu 18.04 / 20.04 / 22.04 and Python 3.8.
+This repo has been developed and tested with Ubuntu  22.04 / 24. 04 and Python 3.8.
 
 ```bash
 # 1. Clone the repository
