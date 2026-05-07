@@ -51,22 +51,49 @@ This repo refers to the paper "*Sim-to-real Deep Reinforcement Learning for Comp
 
 
 ### Installation ###
-This repo has only been developed and tested with Ubuntu 18.04 and python 3.8.
+This repo has been developed and tested with Ubuntu 18.04 / 20.04 / 22.04 and Python 3.8.
 
-```
-# TODO: install via pypi
+```bash
+# 1. Clone the repository
 git clone https://github.com/yijionglin/tactile_gym_2
-cd tactile_gym
+cd tactile_gym_2
+
+# 2. (Recommended) Create a Python 3.8 conda environment
+conda create -n tactile_gym python=3.8 -y
+conda activate tactile_gym
+
+# 3. Downgrade setuptools/wheel (needed on recent pip to build legacy gym deps)
+pip install "setuptools==65.5.0" "wheel<0.40.0"
+
+# 4. Install gym manually (not pulled in automatically by setup.py)
+#    Use 0.25.2 — the last release before the breaking 0.26 API change.
+pip install gym==0.25.2
+
+# 5. Install tactile_gym
 python setup.py install
 ```
 
+> **Note**: `gym` (OpenAI Gym, not `gymnasium`) is a required dependency but is not listed in `requirements.txt`. Install it manually with the command above. Versions `0.21.x` ~ `0.25.x` are API-compatible; `0.26+` introduces breaking changes and is not supported.
+
 ### Testing Environments ###
 
-Demonstration files are provided for all environments in the example directory. For example, from the base directory run
+Demonstration files are provided for all environments in the `examples/` directory. For example, from the base directory run
 ```
-python examples/demo_example_env.py
+python examples/demo_example_arm_env.py
 ```
-to run a user controllable example environment.
+to run a user-controllable example environment.
+
+Other available demos:
+```
+python examples/demo_edge_env.py
+python examples/demo_surf_auto_env.py
+python examples/demo_surf_goal_env.py
+python examples/demo_surf_vert_env.py
+python examples/demo_push_env.py
+python examples/demo_roll_env.py
+python examples/demo_balance_env.py
+python examples/demo_trained_agents.py
+```
 
 
 ### Tactile Robot Environment Details ###
